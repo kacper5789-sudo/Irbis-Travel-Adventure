@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>Panel logowania | Irbis Travel & Adventure</title>
+</head>
+<body class="admin-page">
+<nav class="site-nav">
+  <a class="brand" href="index.html" aria-label="Irbis Travel & Adventure - strona główna">
+    <img src="assets/logo/irbis-logo.jpg" alt="Logo Irbis Travel & Adventure">
+    <span>Irbis Travel & Adventure</span>
+  </a>
+  <button class="menu-toggle" aria-label="Otwórz menu">☰</button>
+  <div class="nav-links">
+    <a href="index.html">Strona główna</a>
+    <a href="posty.html">Posty</a>
+    <a href="kim-jestesmy.html">Kim jesteśmy?</a>
+    <a href="galeria.html">Galeria</a>
+    <a href="mapa.html">Mapa świata</a>
+    <a href="index.html#kontakt">Kontakt</a>
+    <a class="active" href="admin.html">Panel logowania</a>
+  </div>
+</nav>
+
+<main>
+  <section class="section admin-section">
+    <div class="section-head centered">
+      <p class="kicker">Panel logowania</p>
+      <h1>Panel strony</h1>
+      <p>Admin zarządza postami i galerią. Użytkownik może dodawać posty, ale nie może ich usuwać ani edytować galerii.</p>
+    </div>
+
+    <div class="admin-login-card" id="adminLogin">
+      <h2>Logowanie</h2>
+      <p>Wpisz login i hasło. Admin ma pełne uprawnienia, użytkownik może tylko dodawać posty.</p>
+      <label>Login
+        <input type="text" id="adminLoginName" placeholder="Login" autocomplete="username">
+      </label>
+      <label>Hasło
+        <input type="password" id="adminPassword" placeholder="Hasło" autocomplete="current-password">
+      </label>
+      <button class="btn" type="button" id="adminLoginBtn">Zaloguj</button>
+      <div class="login-register-box">
+        <p>Nie masz konta?</p>
+        <button class="btn ghost-btn" type="button" id="showRegisterRequestBtn">Zarejestruj się</button>
+      </div>
+      <form class="admin-form compact-admin-form register-request-form" id="registerRequestForm" hidden>
+        <h3>Formularz rejestracyjny</h3>
+        <label>Login
+          <input type="text" id="requestLogin" placeholder="np. Jan" autocomplete="off">
+        </label>
+        <label>Hasło
+          <input type="password" id="requestPassword" placeholder="Hasło" autocomplete="new-password">
+        </label>
+        <button class="btn" type="submit">Wyślij prośbę</button>
+        <p class="admin-hint" id="requestRegisterStatus"></p>
+      </form>
+    </div>
+
+    <div class="admin-dashboard" id="adminDashboard" hidden>
+      <div class="admin-posts-panel admin-session-panel">
+        <div class="admin-session-head">
+          <div>
+            <h2>Panel użytkownika</h2>
+            <p class="admin-role-info" id="adminRoleInfo">Tryb panelu</p>
+          </div>
+          <button class="btn ghost-btn" type="button" id="adminLogoutBtn">Wyloguj</button>
+        </div>
+      </div>
+
+      <div class="admin-posts-panel admin-users-panel" id="adminUsersPanel">
+        <h2>Prośby o rejestrację</h2>
+        <p class="admin-hint" id="usersLimitInfo">Limit aktywnych użytkowników: 10000</p>
+        <p class="admin-hint" id="usersCountInfo">Liczba zarejestrowanych użytkowników: 0</p>
+        <div id="pendingUsersList" class="admin-users-list"></div>
+      </div>
+
+      <div class="admin-toolbar post-toolbar">
+        <div>
+          <h2>Nowy post</h2>
+          <p class="admin-hint">Dodaj relację z podróży. Post pojawi się na stronie głównej oraz w zakładce Posty.</p>
+        </div>
+      </div>
+
+      <form class="admin-form" id="postForm">
+        <label>Tytuł posta
+          <input type="text" id="postTitle" placeholder="np. Brazylia — wakacje życia 2026" required>
+        </label>
+        <label>Kategoria / kontynent
+          <input type="text" id="postTag" placeholder="np. Ameryka Południowa" required>
+        </label>
+        <label>Data / podpis
+          <input type="text" id="postDate" placeholder="np. 2026 · Amazonia">
+        </label>
+        <label>Krótki opis na kartę
+          <textarea id="postExcerpt" rows="3" placeholder="Krótki wstęp, który pokaże się na stronie głównej." required></textarea>
+        </label>
+        <label>Pełna treść posta
+          <textarea id="postBody" rows="8" placeholder="Pełna relacja z podróży." required></textarea>
+        </label>
+        <label>Zdjęcie główne
+          <input type="file" id="postImage" accept="image/*">
+        </label>
+        <div class="admin-preview" id="imagePreview">Brak zdjęcia</div>
+        <button class="btn" type="submit">Opublikuj post</button>
+      </form>
+
+      <div class="admin-posts-panel">
+        <h2>Dodane posty</h2>
+        <div id="adminPostsList" class="admin-posts-list"></div>
+      </div>
+
+      <div class="admin-posts-panel admin-gallery-panel">
+        <h2>Zdjęcia w galerii</h2>
+        <p class="admin-hint">Możesz dodawać i ukrywać zdjęcia wyłącznie w zakładce Galeria. Zdjęcia użyte na stronie głównej i w zakładce „Kim jesteśmy?” zostają nietknięte.</p>
+        <div class="admin-gallery-controls">
+          <label>Kontynent
+            <select id="galleryContinentSelect"></select>
+          </label>
+          <label class="admin-file-label">Dodaj zdjęcia
+            <input type="file" id="galleryImageInput" accept="image/*" multiple>
+          </label>
+        </div>
+        <p class="admin-hint" id="adminGalleryHint">Dodane zdjęcia są kopiowane do lokalnej pamięci przeglądarki. Oryginały na dysku nie są ruszane.</p>
+        <div id="adminGalleryList" class="admin-gallery-list"></div>
+      </div>
+
+      <div class="admin-posts-panel admin-registered-users-panel" id="adminRegisteredUsersPanel">
+        <h2>Zarejestrowani użytkownicy</h2>
+        <div id="registeredUsersList" class="admin-users-list"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="kontakt">
+  <div><strong>Irbis Travel & Adventure</strong><br><br>REGON: 523621770</div>
+  <div><a href="mailto:kontakt@irbistravel.pl">kontakt@irbistravel.pl</a><br><span>© Irbis Travel & Adventure</span></div>
+</footer>
+<script src="script.js"></script>
+
+<div class="creator-credit">
+  <span>Twórca strony:</span><br>
+  <a href="https://www.pwcstudio.pl" target="_blank" rel="noopener">Kacper Piskorz - www.pwcstudio.pl</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>Posty z podróży | Irbis Travel & Adventure</title>
+</head>
+<body>
+<nav class="site-nav">
+  <a class="brand" href="index.html" aria-label="Irbis Travel & Adventure - strona główna">
+    <img src="assets/logo/irbis-logo.jpg" alt="Logo Irbis Travel & Adventure">
+    <span>Irbis Travel & Adventure</span>
+  </a>
+  <button class="menu-toggle" aria-label="Otwórz menu">☰</button>
+  <div class="nav-links">
+    <a href="index.html">Strona główna</a>
+    <a class="active" href="posty.html">Posty</a>
+    <a href="kim-jestesmy.html">Kim jesteśmy?</a>
+    <a href="galeria.html">Galeria</a>
+    <a href="mapa.html">Mapa świata</a>
+    <a href="index.html#kontakt">Kontakt</a>
+    <a href="admin.html">Panel logowania</a>
+  </div>
+</nav>
+<main>
+  <section class="section posts-page-hero">
+    <div class="section-head centered">
+      <p class="kicker">Posty z podróży</p>
+      <h1>Historie, które zostają na dłużej</h1>
+      <p>Tu będziemy publikować nasze wpisy z podróży, krótkie relacje, zdjęcia i opowieści z miejsc, do których warto wracać wspomnieniami.</p>
+    </div>
+  </section>
+
+  <section class="section posts-list-section">
+    <div class="posts-list" id="dynamicPostsList"></div>
+    <div class="posts-list static-posts-fallback">
+      <article class="post-full-card" id="post-europa">
+        <img src="assets/gallery/europa/19.jpg" alt="Europa - zdjęcie z podróży" loading="lazy">
+        <div>
+          <span class="post-tag">Europa</span>
+          <h2>Drogi, góry i chwile zapisane w pamięci</h2>
+          <p class="post-date">Post przykładowy · do edycji</p>
+          <p>To miejsce na pierwszą relację z podróży. Można tu opisać trasę, ludzi spotkanych po drodze, najciekawsze momenty wyprawy oraz dodać zdjęcia, które najlepiej oddają klimat wyjazdu.</p>
+          <p>W przyszłości każdy wpis może prowadzić do konkretnej pinezki na mapie albo do galerii z danego miejsca.</p>
+        </div>
+      </article>
+
+      <article class="post-full-card" id="post-azja">
+        <img src="assets/gallery/azja/16.jpg" alt="Azja - zdjęcie z podróży" loading="lazy">
+        <div>
+          <span class="post-tag">Azja</span>
+          <h2>Za kolejnym horyzontem</h2>
+          <p class="post-date">Post przykładowy · do edycji</p>
+          <p>Każda podróż ma swój rytm. Czasem najważniejsze nie są odległości, tylko rozmowy, lokalne zwyczaje i momenty, które trudno opisać jednym zdjęciem.</p>
+          <p>Ten wpis można później zastąpić prawdziwą relacją z wyprawy.</p>
+        </div>
+      </article>
+
+      <article class="post-full-card" id="post-afryka">
+        <img src="assets/gallery/afryka/01.jpg" alt="Afryka - zdjęcie z podróży" loading="lazy">
+        <div>
+          <span class="post-tag">Afryka</span>
+          <h2>Miejsca, do których wraca się myślami</h2>
+          <p class="post-date">Post przykładowy · do edycji</p>
+          <p>Tu może znaleźć się opis wyprawy, anegdota, krótka historia albo dłuższa relacja. Posty mają sprawić, że strona będzie żyła i regularnie pokazywała nowe podróże.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="footer" id="kontakt">
+  <div><strong>Irbis Travel & Adventure</strong><br><br>REGON: 523621770</div>
+  <div><a href="mailto:kontakt@irbistravel.pl">kontakt@irbistravel.pl</a><br><span>© Irbis Travel & Adventure</span></div>
+</footer>
+<script src="script.js"></script>
+
+<div class="creator-credit">
+  <span>Twórca strony:</span><br>
+  <a href="https://www.pwcstudio.pl" target="_blank" rel="noopener">Kacper Piskorz - www.pwcstudio.pl</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>Galeria | Irbis Travel & Adventure</title>
+
+<style>
+/* Sticky menu kontynentów w galerii */
+.continent-nav{
+  position: sticky;
+  top: 77px;
+  z-index: 900;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 28px auto 48px;
+  padding: 14px 16px;
+  max-width: 1120px;
+  background: rgba(7,16,25,.86);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 999px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 48px rgba(0,0,0,.24);
+}
+
+.continent-nav a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 15px;
+  border-radius: 999px;
+  color: #f4f7f8;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  opacity: .86;
+  transition: .2s ease;
+  white-space: nowrap;
+}
+
+.continent-nav a:hover{
+  color: var(--accent, #D99A2B);
+  background: rgba(217,154,43,.10);
+  opacity: 1;
+}
+
+.continent-section{
+  scroll-margin-top: 155px;
+}
+
+@media(max-width:900px){
+  .continent-nav{
+    top: 67px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    border-radius: 22px;
+    margin-bottom: 36px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .continent-nav a{
+    flex: 0 0 auto;
+  }
+
+  .continent-section{
+    scroll-margin-top: 145px;
+  }
+}
+
+@media(max-width:560px){
+  .continent-nav{
+    top: 66px;
+    margin-inline: -4px;
+    padding: 12px;
+  }
+
+  .continent-nav a{
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+</style>
+
+</head>
+<body class="gallery-page">
+<nav class="site-nav">
+  <a class="brand" href="index.html" aria-label="Irbis Travel & Adventure - strona główna">
+    <img src="assets/logo/irbis-logo.jpg" alt="Logo Irbis Travel & Adventure">
+    <span>Irbis Travel & Adventure</span>
+  </a>
+  <button class="menu-toggle" aria-label="Otwórz menu">☰</button>
+  <div class="nav-links">
+    <a href="index.html">Strona główna</a>
+    <a href="posty.html">Posty</a>
+    <a href="kim-jestesmy.html">Kim jesteśmy?</a>
+    <a class="active" href="galeria.html">Galeria</a>
+    <a href="mapa.html">Mapa świata</a>
+    <a href="index.html#kontakt">Kontakt</a>
+    <a href="admin.html">Panel logowania</a>
+  </div>
+</nav>
+
+<main>
+  <section class="section gallery-hero">
+    <div class="section-head centered">
+      <p class="kicker">Galeria</p>
+      <h2 class="gallery-subtitle">Zdjęcia z naszych podróży</h2>
+      <p>Góry, szczyty, morza, inne kultury, spotkania i wszystkie wspaniałe miejsca, które zostają w pamięci.</p>
+    </div>
+    <div class="continent-nav" aria-label="Kontynenty w galerii">
+      <a href="#europa">Europa</a>
+      <a href="#azja">Azja</a>
+      <a href="#afryka">Afryka</a>
+      <a href="#ameryka-polnocna">Ameryka Północna</a>
+      <a href="#ameryka-poludniowa">Ameryka Południowa</a>
+      <a href="#australia-oceania">Australia i Oceania</a>
+      <a href="#antarktyda">Antarktyda</a>
+    </div>
+    <section class="continent-section" id="europa">
+      <div class="continent-heading">
+        <h3>Europa</h3>
+        <p>Zdjęcia z europejskich dróg, gór i spotkań.</p>
+      </div>
+      <div class="photo-grid full-gallery continent-gallery js-auto-gallery" data-path="assets/gallery/europa/" data-gallery-group="europa" data-lightbox="true"></div>
+    </section>
+    <section class="continent-section" id="azja">
+      <div class="continent-heading">
+        <h3>Azja</h3>
+        <p>Wyprawy, kultury i krajobrazy Azji.</p>
+      </div>
+      <div class="photo-grid full-gallery continent-gallery js-auto-gallery" data-path="assets/gallery/azja/" data-gallery-group="azja" data-lightbox="true"></div>
+    </section>
+    <section class="continent-section" id="afryka">
+      <div class="continent-heading">
+        <h3>Afryka</h3>
+        <p>Miejsca, pustynie, góry i historie z Afryki.</p>
+      </div>
+      <div class="photo-grid full-gallery continent-gallery js-auto-gallery" data-path="assets/gallery/afryka/" data-gallery-group="afryka" data-lightbox="true"></div>
+    </section>
+    <section class="continent-section" id="ameryka-polnocna">
+      <div class="continent-heading">
+        <h3>Ameryka Północna</h3>
+        <p>Zdjęcia z północnoamerykańskich tras i miast.</p>
+      </div>
+      <div class="photo-grid full-gallery continent-gallery js-auto-gallery" data-path="assets/gallery/ameryka-polnocna/" data-gallery-group="ameryka-polnocna" data-lightbox="true"></div>
+    </section>
+    <section class="continent-section" id="ameryka-poludniowa">
+      <div class="continent-heading">
+        <h3>Ameryka Południowa</h3>
+        <p>Andy, drogi, ludzie i krajobrazy Ameryki Południowej.</p>
+      </div>
+      <div class="photo-grid full-gallery continent-gallery js-auto-gallery" data-path="assets/gallery/ameryka-poludniowa/" data-gallery-group="ameryka-poludniowa" data-lightbox="true"></div>
+    </section>
+    <section class="continent-section" id="australia-oceania">
+      <div class="continent-heading">
+        <h3>Australia i Oceania</h3>
+        <p>Dalekie wyspy, oceany i południowe szlaki.</p>
+      </div>
+      <div class="photo-grid full-gallery continent-gallery js-auto-gallery" data-path="assets/gallery/australia-oceania/" data-gallery-group="australia-oceania" data-lightbox="true"></div>
+    </section>
+    <section class="continent-section" id="antarktyda">
+      <div class="continent-heading">
+        <h3>Antarktyda</h3>
+        <p>Miejsce na przyszłe polarne historie.</p>
+      </div>
+      <div class="photo-grid full-gallery continent-gallery js-auto-gallery" data-path="assets/gallery/antarktyda/" data-gallery-group="antarktyda" data-lightbox="true"></div>
+    </section>
+  </section>
+</main>
+
+<div class="lightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Zamknij zdjęcie">×</button>
+  <button class="lightbox-arrow lightbox-prev" aria-label="Poprzednie zdjęcie">‹</button>
+  <img src="" alt="Powiększone zdjęcie z galerii">
+  <button class="lightbox-arrow lightbox-next" aria-label="Następne zdjęcie">›</button>
+  <div class="lightbox-counter" aria-live="polite"></div>
+</div>
+
+<script src="script.js"></script>
+
+<div class="creator-credit">
+  <span>Twórca strony:</span><br>
+  <a href="https://www.pwcstudio.pl" target="_blank" rel="noopener">Kacper Piskorz - www.pwcstudio.pl</a>
+</div>
+</body>
+</html>

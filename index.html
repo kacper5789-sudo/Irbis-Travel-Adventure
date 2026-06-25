@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.ico">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<title>Irbis Travel & Adventure</title>
+
+<style>
+.brand span{
+  transition: color .3s ease;
+}
+.brand:hover span{
+  color:#D99A2B;
+}
+.meetings .kicker{
+  color:#D99A2B;
+}
+
+.section-head h2,
+.section-head .kicker,
+.meetings .kicker{
+  font-size:2.4rem;
+  font-weight:900;
+  color:#D99A2B;
+  line-height:1.1;
+}
+</style>
+
+</head>
+<body>
+<nav class="site-nav">
+  <a class="brand" href="index.html" aria-label="Irbis Travel & Adventure - strona główna">
+    <img src="assets/logo/irbis-logo.jpg" alt="Logo Irbis Travel & Adventure">
+    <span>Irbis Travel & Adventure</span>
+  </a>
+  <button class="menu-toggle" aria-label="Otwórz menu">☰</button>
+  <div class="nav-links">
+    <a class="active" href="index.html">Strona główna</a>
+    <a href="posty.html">Posty</a>
+    <a href="kim-jestesmy.html">Kim jesteśmy?</a>
+    <a href="galeria.html">Galeria</a>
+    <a href="mapa.html">Mapa świata</a>
+    <a href="index.html#kontakt">Kontakt</a>
+    <a href="admin.html">Panel logowania</a>
+  </div>
+</nav>
+<header class="hero" id="start">
+  <div class="hero-shade"></div>
+  <div class="hero-content">
+    <p class="eyebrow">podróże · góry · ludzie · historie</p>
+    <h1>Irbis Travel & Adventure</h1>
+    <p class="motto">Nie zbieramy rzeczy.<br>Zbieramy historie.</p>
+  </div>
+</header>
+
+<main>
+
+  <section class="section posts-preview" id="posty">
+    <div class="section-head centered">
+      <p class="kicker">Posty z podróży</p>
+      <h2>Najnowsze historie z drogi</h2>
+      <p>Krótkie wpisy, wspomnienia i opowieści z miejsc, które zostają z nami na długo.</p>
+    </div>
+    <div class="post-card-grid" id="dynamicPostPreview"></div>
+    <div class="post-card-grid static-posts-fallback">
+      <article class="travel-post-card">
+        <img src="assets/gallery/europa/19.jpg" alt="Górski krajobraz" loading="lazy">
+        <div class="travel-post-content">
+          <span class="post-tag">Europa</span>
+          <h3>Drogi, góry i chwile zapisane w pamięci</h3>
+          <p>Krótka opowieść z wyprawy — o widokach, ludziach i momentach, które najlepiej wspomina się po latach.</p>
+          <a href="posty.html#post-europa">Czytaj więcej →</a>
+        </div>
+      </article>
+      <article class="travel-post-card">
+        <img src="assets/gallery/azja/16.jpg" alt="Azjatycki krajobraz" loading="lazy">
+        <div class="travel-post-content">
+          <span class="post-tag">Azja</span>
+          <h3>Za kolejnym horyzontem</h3>
+          <p>Podróż to nie tylko punkt na mapie — to historia, zapach miejsca, rozmowy i droga, której nie da się zapomnieć.</p>
+          <a href="posty.html#post-azja">Czytaj więcej →</a>
+        </div>
+      </article>
+      <article class="travel-post-card">
+        <img src="assets/gallery/afryka/01.jpg" alt="Wyprawa w terenie" loading="lazy">
+        <div class="travel-post-content">
+          <span class="post-tag">Afryka</span>
+          <h3>Miejsca, do których wraca się myślami</h3>
+          <p>Niektóre podróże kończą się po powrocie. Inne zostają z człowiekiem i wracają przy każdym zdjęciu.</p>
+          <a href="posty.html#post-afryka">Czytaj więcej →</a>
+        </div>
+      </article>
+    </div>
+    <div class="center-actions">
+      <a class="btn" href="posty.html">Zobacz wszystkie posty</a>
+    </div>
+  </section>
+
+  <section class="section meetings" id="spotkania">
+    <div class="split">
+      <div>
+        <p class="kicker">Spotkania</p>
+        <h2>Ludzie. Góry. Opowieści.</h2>
+        <p>Raz do roku nasze drogi spotykają się w jednym miejscu. To czas, kiedy odkładamy plecaki, siadamy razem i dzielimy się tym, co przywieźliśmy z różnych zakątków świata.</p>
+        <p>Opowiadamy o wyprawach, górach, poznanych kulturach i chwilach, których nie da się zamknąć wyłącznie w fotografiach.</p>
+        <p>Nasze spotkania to nie prelekcje — to rozmowy ludzi połączonych ciekawością świata, pasją do podróży i chęcią odkrywania tego, co znajduje się za kolejnym horyzontem.</p>
+      </div>
+      <img src="assets/gallery/09.jpg" alt="Górska panorama" loading="lazy">
+    </div>
+  </section>
+
+  <section class="section gallery-preview" id="galeria">
+    <div class="section-head">
+      <p class="kicker">Galeria</p>
+      <p>Zdjęcia z naszych podróży. Góry, szczyty, morza, inne kultury, spotkania i wszystkie wspaniałe miejsca, które zostają w pamięci.</p>
+    </div>
+    <div class="photo-grid preview-grid js-auto-gallery" data-limit="8" data-gallery-group="strona-glowna" data-lightbox="true"></div>
+    <div class="center-actions">
+      <a class="btn" href="galeria.html">Pokaż więcej</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="kontakt">
+  <div>
+    <strong>Irbis Travel & Adventure</strong><br><br>REGON: 523621770
+  </div>
+  <div>
+    <a href="mailto:kontakt@irbistravel.pl">kontakt@irbistravel.pl</a><br>
+    <span>© Irbis Travel & Adventure</span>
+  </div>
+</footer>
+
+<div class="lightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Zamknij zdjęcie">×</button>
+  <button class="lightbox-arrow lightbox-prev" aria-label="Poprzednie zdjęcie">‹</button>
+  <img src="" alt="Powiększone zdjęcie z galerii">
+  <button class="lightbox-arrow lightbox-next" aria-label="Następne zdjęcie">›</button>
+  <div class="lightbox-counter" aria-live="polite"></div>
+</div>
+
+<script src="script.js"></script>
+
+<div class="creator-credit">
+  <span>Twórca strony:</span><br>
+  <a href="https://www.pwcstudio.pl" target="_blank" rel="noopener">Kacper Piskorz - www.pwcstudio.pl</a>
+</div>
+</body>
+</html>
